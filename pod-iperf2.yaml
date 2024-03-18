@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iperf2-client
+spec:
+  containers:
+    - name: client
+      command: ["sleep", "99999999"]
+      image: tomopiro/netperf:latest
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iperf2-server
+  labels:
+    app: iperf2-server
+spec:
+  containers:
+    - name: server
+      image: tomopiro/netperf:latest
+      command: ["iperf", "-s"]
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iperf2-server
+spec:
+  selector:
+    app: iperf2-server
+  ports:
+    - name: tcp
+      protocol: TCP
+      port: 5201
+      targetPort: 5201
+    - name: udp
+      protocol: UDP
+      port: 5201
+      targetPort: 5201
