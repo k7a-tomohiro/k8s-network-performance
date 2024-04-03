@@ -10,16 +10,12 @@ This project provides a container for network performance tests.
 
 The container is available at [DockerHub](https://hub.docker.com/r/tomopiro/netperf).
 
-Following tools are available in the container.
-`nano editor`, `curl` and `net-tools` are also installed for convenience.
+## What's in the contaienr
 
 - [**wrk**](https://github.com/wg/wrk)
-- [**wrk2**](https://github.com/giltene/wrk2)
 - [**iperf2**](https://sourceforge.net/projects/iperf2/)
 - [**iperf3**](https://github.com/esnet/iperf)
 - [**netperf**](https://github.com/HewlettPackard/netperf)
-
-`nano editor`, `curl` and `net-tools` are also installed for convenience.
 
 Note that the iperf2 and iperf3 are not compatible.
 See the [Iperf 2 & Iperf 3 Comparison Table](https://iperf2.sourceforge.io/IperfCompare.html).
@@ -32,7 +28,6 @@ See the [Iperf 2 & Iperf 3 Comparison Table](https://iperf2.sourceforge.io/Iperf
 - Installed tools are
   - nano
   - wrk
-  - wrk2
   - curl
   - netperf
   - iperf2
@@ -51,7 +46,7 @@ Official documentation can be found at [iperf.fr](https://iperf.fr/iperf-doc.php
 
 `iperf` command is installed in the PATH.
 
-Run a server.
+1. Run a server.
 
 ```bash
 # Create a network to access from client.
@@ -61,7 +56,7 @@ docker create network netperf
 docker run -it --network netperf --hostname netperf tomopiro/netperf iperf -s
 ```
 
-Run client and check performance.
+2. Run client and check performance.
 
 ```bash
 # Run iperf2 client in the same network as the server.
@@ -74,7 +69,7 @@ Official documentation can be found at [iperf.fr](https://iperf.fr/iperf-doc.php
 
 `iperf3` command is installed in the PATH.
 
-Run a server.
+1. Run a server.
 
 ```bash
 # Create a network to access from client.
@@ -84,7 +79,7 @@ docker create network netperf
 docker run -it --network netperf --hostname netperf tomopiro/netperf iperf3 -s
 ```
 
-Run client and check performance.
+2. Run client and check performance.
 
 ```bash
 # Run iperf3 client in the same network as the server.
@@ -97,7 +92,7 @@ Official documentation can be found at [Care and Feeding of Netperf 2.7.X](https
 
 `netperf` command is installed in the PATH.
 
-Run a server.
+1. Run a server.
 
 ```bash
 # Create a network to access from client.
@@ -107,7 +102,7 @@ docker create network netperf
 docker run -it --network netperf --hostname netperf tomopiro/netperf netserver -D -L 0.0.0.0
 ```
 
-Run client and check performance.
+2. Run client and check performance.
 
 ```bash
 # Run netperf client in the same network as the server.
