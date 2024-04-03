@@ -10,13 +10,15 @@ This project provides a container for network performance tests.
 
 The container is available at [DockerHub](https://hub.docker.com/r/tomopiro/netperf).
 
-These tools are available in the container.
+Following tools are available in the container.
 
 - [**wrk**](https://github.com/wg/wrk)
 - [**wrk2**](https://github.com/giltene/wrk2)
 - [**iperf2**](https://sourceforge.net/projects/iperf2/)
 - [**iperf3**](https://github.com/esnet/iperf)
 - [**netperf**](https://github.com/HewlettPackard/netperf)
+
+`nano editor`, `curl` and `net-tools` are also installed for convenience.
 
 Note that the iperf2 and iperf3 are not compatible.
 See the [Iperf 2 & Iperf 3 Comparison Table](https://iperf2.sourceforge.io/IperfCompare.html).
