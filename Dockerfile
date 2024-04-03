@@ -1,7 +1,6 @@
-FROM ubuntu:24.04@sha256:723ad8033f109978f8c7e6421ee684efb624eb5b9251b70c6788fdb2405d050b as builder
+FROM debian:12.5-slim as builder
 
-RUN apt-get update \
-    && apt-get install -f -y \
+RUN apt-get update && apt-get install -f -y \
     build-essential \
     libssl-dev \
     git \
@@ -12,11 +11,12 @@ RUN apt-get update \
     && make \
     && cp wrk /usr/local/bin/wrk2
 
-FROM ubuntu:24.04@sha256:723ad8033f109978f8c7e6421ee684efb624eb5b9251b70c6788fdb2405d050b
+FROM debian:12.5-slim
 
 COPY --from=builder /usr/local/bin/wrk2 /usr/local/bin/wrk2
 
-RUN apt-get update && apt-get install -y \
+RUN sed -i -e 's/main/main non-free non-free-firmware/g' /etc/apt/sources.list.d/debian.sources \
+    && apt-get update && apt-get install -y \
     nano \
     wrk \
     curl \

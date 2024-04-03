@@ -26,7 +26,7 @@ See the [Iperf 2 & Iperf 3 Comparison Table](https://iperf2.sourceforge.io/Iperf
 
 ## Container structure
 
-- [Ubuntu](https://hub.docker.com/_/ubuntu) is used for the base image.
+- [Debian](https://hub.docker.com/_/debian) is used for the base image.
 - No `Entrypoint` defined.
 - CMD is `/bin/bash`.
 - Installed tools are
