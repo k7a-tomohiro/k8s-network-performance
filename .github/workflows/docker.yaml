@@ -27,5 +27,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6,linux/arm/v5,linux/386,linux/mips64le,linux/s390x
+          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6,linux/arm/v5,linux/386,linux/mips64le
           tags: tomopiro/netperf:latest
