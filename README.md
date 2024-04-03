@@ -46,21 +46,22 @@ Official documentation can be found at [iperf.fr](https://iperf.fr/iperf-doc.php
 
 `iperf` command is installed in the PATH.
 
-1. Run a server.
+1. Create a test network that connect servfer and client.
 
 ```bash
-# Create a network to access from client.
-docker create network netperf
-
-# Run iperf2 server
-docker run -it --network netperf --hostname netperf tomopiro/netperf iperf -s
+docker network create netperf
 ```
 
-2. Run client and check performance.
+2. Run an iperf2 server.
 
 ```bash
-# Run iperf2 client in the same network as the server.
-docker run -it --network netperf tomopiro/netperf iperf -c netperf
+docker run -it --rm --network netperf --hostname netperf tomopiro/netperf iperf -s
+```
+
+3. Run iperf2 client and check performance.
+
+```bash
+docker run -it --rm --network netperf tomopiro/netperf iperf -c netperf
 ```
 
 ### iperf3
@@ -69,21 +70,22 @@ Official documentation can be found at [iperf.fr](https://iperf.fr/iperf-doc.php
 
 `iperf3` command is installed in the PATH.
 
-1. Run a server.
+1. Create a test network that connect servfer and client.
 
 ```bash
-# Create a network to access from client.
-docker create network netperf
-
-# Run iperf3 server
-docker run -it --network netperf --hostname netperf tomopiro/netperf iperf3 -s
+docker network create netperf
 ```
 
-2. Run client and check performance.
+2. Run an iperf3 server.
 
 ```bash
-# Run iperf3 client in the same network as the server.
-docker run -it --network netperf tomopiro/netperf iperf3 -c netperf
+docker run -it --rm --network netperf --hostname netperf tomopiro/netperf iperf3 -s
+```
+
+3. Run iperf3 client and check performance.
+
+```bash
+docker run -it --rm --network netperf tomopiro/netperf iperf3 -c netperf
 ```
 
 ### netperf
@@ -92,19 +94,20 @@ Official documentation can be found at [Care and Feeding of Netperf 2.7.X](https
 
 `netperf` command is installed in the PATH.
 
-1. Run a server.
+1. Create a test network that connect servfer and client.
 
 ```bash
-# Create a network to access from client.
-docker create network netperf
-
-# Run netperf server.
-docker run -it --network netperf --hostname netperf tomopiro/netperf netserver -D -L 0.0.0.0
+docker network create netperf
 ```
 
-2. Run client and check performance.
+2. Run a netperf server.
 
 ```bash
-# Run netperf client in the same network as the server.
-docker run -it --network netperf tomopiro/netperf netperf -H netperf
+docker run -it --rm --network netperf --hostname netperf tomopiro/netperf netserver -D -L 0.0.0.0
+```
+
+3. Run netperf client and check performance.
+
+```bash
+docker run -it --rm --network netperf tomopiro/netperf netperf -H netperf
 ```
