@@ -29,7 +29,6 @@ See the [Iperf 2 & Iperf 3 Comparison Table](https://iperf2.sourceforge.io/Iperf
   - nano
   - vim
   - wrk
-  - wrk2
   - curl
   - netperf
   - iperf2
