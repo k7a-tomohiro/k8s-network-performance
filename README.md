@@ -10,7 +10,7 @@ This project provides a container for network performance tests.
 
 The container is available at [DockerHub](https://hub.docker.com/r/tomopiro/netperf).
 
-## What's in the contaienr
+## What's in the container
 
 - [**wrk**](https://github.com/wg/wrk)
 - [**wrk2**](https://github.com/giltene/wrk2)
