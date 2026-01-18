@@ -13,7 +13,6 @@ The container is available at [DockerHub](https://hub.docker.com/r/tomopiro/netp
 ## What's in the container
 
 - [**wrk**](https://github.com/wg/wrk)
-- [**wrk2**](https://github.com/giltene/wrk2)
 - [**iperf2**](https://sourceforge.net/projects/iperf2/)
 - [**iperf3**](https://github.com/esnet/iperf)
 - [**netperf**](https://github.com/HewlettPackard/netperf)
